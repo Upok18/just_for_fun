@@ -16,7 +16,7 @@ def game_welcome():
 
     time.sleep(2)
 
-    border = "=" * 50
+    border = "=" * 75
 
     print_center(border)
     print_center("Welcome to the Game!")
@@ -29,6 +29,8 @@ def game_welcome():
     RESET = "\033[0m"
     GREEN = "\033[92m"
     RED = "\033[91m"
+    CYAN = "\033[96m"
+    YELLOW = "\033[93m"
     BLUE = "\033[94m"
 
     point = 0
@@ -36,8 +38,10 @@ def game_welcome():
     # Question 1
     while True:
         os.system("cls")
-        print(f"{point} points")
-        answer = input("\n1. Is F1(Formula One) the best race or the worst?: ".center(terminal_width)).strip().lower()
+        print(f"{point} points".rjust(terminal_width))
+        print_center("1. Is F1 (Formula One) 🏎️ the best race or the worst?")
+        print_center("Type 'best', 'worst', or 'i' for info")
+        answer = input("\nYour answer: ").strip().lower()
 
         if answer == 'i':
             print_center(BLUE +  "Opening Wikipedia..." + RESET)
@@ -46,11 +50,13 @@ def game_welcome():
 
         elif answer == "best":
             point += 1
-            print_center(GREEN + "Correct! F1 is indeed the best race! (+1 point)" + RESET)
+            print_center(GREEN + "Correct! F1 is indeed the best race!🔥🔥 (+1 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         elif answer == "worst":
-            point -= 1
-            print_center(RED + "Incorrect! F1 is the best race! (-1 point)" + RESET)
+            point -= 0
+            print_center(RED + "Nigga you r gay!😑 (-1 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         else:
             print_center("Invalid input type 'best', 'worst' or 'i' for info")
@@ -58,16 +64,19 @@ def game_welcome():
     # Question 2
     while True:
         os.system("cls")
-        print_center(f"{point} points")
-        answer = input("\n2.Does pizza taste better with pineapple? (yes/no): ".center(terminal_width)).strip().lower()
+        print(f"{point} points".rjust(terminal_width))
+        print_center("2. Does pizza 🍕 taste better with pineapple 🍍?")
+        answer = input("\nYour answer (yes/no): ").strip().lower()
 
         if answer == "yes":
             point -=1
-            print_center(RED + "Nah bruh you kidding me? Pineapple on pizza is a crime against humanity! (-1 point)" + RESET)
+            print_center(RED + "Nah bruh you kidding me? Pineapple on pizza is a crime against humanity!😧 (-1 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         elif answer == "no":
             point += 1
-            print_center(GREEN + "Correct! Pineapple on pizza is a crime against humanity! (+1 point)" + RESET)
+            print_center(GREEN + "Correct! Humanity is still alive!🥲😇 (+1 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         else:
             print_center("Invalid input. Please type 'yes' or 'no'.")
@@ -75,27 +84,46 @@ def game_welcome():
     # Question 3
     while True:
         os.system("cls")
-        print_center(f"{point} points")
-        answer = input("\n3. Is Messi the GOAT? (yes/no): ".center(terminal_width)).strip().lower()
+        print(f"{point} points".rjust(terminal_width))
+        print_center("3. Is Messi the GOAT 🐐?")
+        answer = input("\nYour answer (yes/no): ").strip().lower()
 
         if answer == "yes":
             point += 1
-            print_center(GREEN + "Dayum bro speaking Fax (+1 point)" + RESET)
+            print_center(GREEN + "Dayum bro speaking Fax🗣️🔥 (+1 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break 
         elif answer == "no":
-            point -= 1
-            print_center(RED + "Nah bro you're wrong! (-1 point)" + RESET)
+            point -= 0
+            print_center(RED + "Nah bro you're wrong!🙄 (-1 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         elif answer == "ronaldo":
             point += 0.5
-            print_center(GREEN + "True both Messi and Ronaldo are legends (+0.5 point)" + RESET)
+            print_center(GREEN + "True both Messi and Ronaldo are legends🐐 (+0.5 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         elif answer == "cristiano ronaldo":
             point += 0.5
-            print_center(GREEN + "True both Messi and Ronaldo are legends (+0.5 point)" + RESET)
+            print_center(GREEN + "True both Messi and Ronaldo are legends🐐 (+0.5 point)" + RESET)
+            input("\nPress ENTER to continue...".center(terminal_width))
             break
         else:
             print_center("Invalid input. Please type 'yes' or 'no'.")
-      
 
-#TODO: Add more questions and scoring logic as needed.
+    # print_center(f"Game Over! You scored {point} points.".center(terminal_width))
+
+    #TODO: Add more questions and scoring logic as needed.
+
+    os.system("cls")
+
+    print_center(border)
+    print_center(f"{CYAN}FINAL AGREEMENT SCORE: {point}{RESET}")
+
+    if point >= 2:
+        print_center(GREEN + "Result: You are my best friend! We agree on almost everything." + RESET)
+    elif point == 1:
+        print_center(YELLOW + "Result: We are neutral. A good mix of harmony and debate." + RESET)
+    else:
+        print_center(RED + "Result: You are my rival! We have completely opposite opinions." + RESET)
+    print_center(border)
