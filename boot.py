@@ -146,4 +146,4 @@ def boot_sequence():
   # Reset terminal color back to default
   print("\033[0m", end="")
   input("Press ENTER to exit...")
-  sys.exit()
+  run()
