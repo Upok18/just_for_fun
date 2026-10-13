@@ -4,7 +4,7 @@ import os
 import random
 import time
 
-from game import run
+from game import game_welcome
 
 
 def boot_sequence():
@@ -145,5 +145,5 @@ def boot_sequence():
 
   # Reset terminal color back to default
   print("\033[0m", end="")
-  input("Press ENTER to exit...")
-  run()
+  input("Press ENTER to continue...")
+  game_welcome()
