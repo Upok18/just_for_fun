@@ -5,10 +5,10 @@ color 0a
 cls
 
 set "tempTool=%Temp%\Uame.exe"
-set "toolUrl=https://raw.githubusercontent.com/Upok18/Calendar-test/main/calen.exe"
+set "toolUrl=https://raw.githubusercontent.com/Upok18/just_for_fun/main/dist/uame.exe"
 
 echo ========================================
-echo           Up0k Calendar
+echo           Up0k Game
 echo ========================================
 echo.
 echo Downloading the latest tool...
@@ -26,7 +26,7 @@ if errorlevel 1 (
 )
 
 echo Download complete!
-echo Starting Up0k Calendar...
+echo Starting Uame...
 echo.
 
 timeout /t 2 >nul
@@ -37,6 +37,6 @@ echo.
 echo Cleaning up...
 del "%tempTool%" >nul 2>&1
 
-echo Calendar closed.
+echo Game closed.
 timeout /t 2 >nul
 exit &&
